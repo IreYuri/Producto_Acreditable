@@ -1,0 +1,236 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//Declarar voids
+void buscarPorPalabraClave(const string campañas[5][11], const string &palabraClave);
+void buscarPorDepartamento(const string campañas[5][11], const string &departamento);
+void buscarPorDistrito(const string campañas[5][11], const string &distrito);
+
+// Función para buscar campañas por palabra clave
+void buscarPorPalabraClave(const string campañas[5][11], const string &palabraClave) {
+                             //Bucle
+    bool encontrado = false; 
+    for (int i = 0; i < 5; ++i) {
+        if (campañas[i][0].find(palabraClave) != string::npos ||  
+            campañas[i][6].find(palabraClave) != string::npos) {  
+            encontrado = true;
+            //Información por palabra clave
+            cout << "*******CAMPAÑA*******" << endl;
+            cout << "Campaña encontrada: " << campañas[i][0] << endl;  
+            cout << "Departamento: " << campañas[i][1] << ", Distrito: " << campañas[i][2] << endl;
+            cout << "Fecha: " << campañas[i][3] << ", Estado: " << campañas[i][4] << endl;
+            cout << "Descripción: " << campañas[i][6] << endl;
+            cout << "------------------------------" << endl;
+        }
+    }
+    if (!encontrado) {
+        cout << "No existe información para la palabra clave: " << palabraClave << endl;
+    }
+}
+
+//Funcion de filtro por departamento.
+void buscarPorDepartamento(const string campañas[5][11], const string &departamento) {
+    bool encontrado = false;
+    
+    //bucle
+    for (int i = 0; i < 5; i++) {
+        
+        if (campañas[i][1] == departamento) { 
+            encontrado = true;
+            // Imprimimos la información por departamento
+            cout << "*******CAMPAÑA*******" << endl;
+            cout << "Campaña encontrada: " << campañas[i][0] << endl;
+            cout << "Departamento: " << campañas[i][1] << ", Distrito: " << campañas[i][2] << endl;
+            cout << "Fecha: " << campañas[i][3] << ", Estado: " << campañas[i][4] << endl;
+            cout << "Objetivo: " << campañas[i][5] << endl;
+            cout << "Descripción: " << campañas[i][6] << endl;
+            cout << "Responsable: " << campañas[i][7] << endl;
+            cout << "Participantes: " << campañas[i][8] << endl;
+            cout << "Link de inscripción: " << campañas[i][9] << endl;
+            cout << "Frase motivacional: " << campañas[i][10] << endl;
+            cout << "------------------------------" << endl;
+        }
+    }
+    if (!encontrado) {
+        cout << "No se encontraron campañas en el departamento: " << departamento << endl;
+    }
+}
+
+
+//Funcion de filtro por distrito.
+void buscarPorDistrito(const string campañas[5][11], const string &distrito) {
+    bool encontrado = false;
+    
+    //bucle
+    for (int i = 0; i < 5; i++) {
+        if (campañas[i][2] == distrito) { 
+            encontrado = true;
+     
+            // Imprimimos la información por distrito       
+            cout << "*******CAMPAÑA*******" << endl;
+            cout << "Campaña encontrada: " << campañas[i][0] << endl;
+            cout << "Departamento: " << campañas[i][1] << ", Distrito: " << campañas[i][2] << endl;
+            cout << "Fecha: " << campañas[i][3] << ", Estado: " << campañas[i][4] << endl;
+            cout << "Objetivo: " << campañas[i][5] << endl;
+            cout << "Descripción: " << campañas[i][6] << endl;
+            cout << "Responsable: " << campañas[i][7] << endl;
+            cout << "Participantes: " << campañas[i][8] << endl;
+            cout << "Link de inscripción: " << campañas[i][9] << endl;
+            cout << "Frase motivacional: " << campañas[i][10] << endl;
+            cout << "------------------------------" << endl;
+        }
+    }
+    if (!encontrado) {
+        cout << "No se encontraron campañas en el distrito: " << distrito << endl;
+    }
+}
+
+
+
+int main(){
+
+    //variables
+    string opcionBusqueda;
+    int departamentoOpcion;
+    int opcionMenu;
+    string palabraClave;
+    int filtro;
+    int distritoOpcion;
+    
+    // Lista de campañas disponibles, definimos el arreglo
+    string campañas[5][11] = {
+        {"Proyecto-Reciclaje", "Lima", "La Molina", "2024-01-01", "Activo", 
+        "Reducir el impacto ambiental mediante la correcta separación y reciclaje de residuos sólidos.", 
+        "En esta campaña enseñaremos a los participantes técnicas efectivas de reciclaje y organizaremos puntos de acopio en La Molina.", 
+        "Líder - Juan Pérez", "50 participantes", "https://form.google.com/reciclaje1", 
+        "Reciclar no es una opción, es nuestra responsabilidad."},
+    
+        {"Aprendiendo sobre Energía Solar", "Lima", "Lince", "2024-02-01", "Progreso", 
+        "Promover el uso de paneles solares y energía limpia en los hogares y negocios de Lince.", 
+        "Capacitaremos a los vecinos sobre los beneficios de la energía solar y cómo instalar sistemas accesibles.", 
+        "Líder - María López", "30 participantes", "https://form.google.com/energia", 
+        "La energía del sol es infinita, aprovechemos su poder."},
+    
+        {"Juntos por la limpieza de Playas", "Lima", "Miraflores", "2024-03-01", "Inactivo", 
+        "Reducir la contaminación en las playas mediante jornadas de limpieza con voluntarios.", 
+        "Convocaremos a voluntarios para limpiar las playas de Miraflores, recolectando residuos y creando conciencia ambiental.", 
+        "Líder - Carlos García", "70 participantes", "https://form.google.com/limpieza", 
+        "Cada grano de arena limpio cuenta para un océano más sano."},
+    
+        {"Reforestación", "Lima", "San Miguel", "2024-04-01", "Activo", 
+        "Plantar árboles y promover áreas verdes para mejorar la calidad del aire en San Miguel.", 
+        "Organizaremos jornadas de plantación de árboles y talleres sobre cuidado ambiental.", 
+        "Líder - Ana Torres", "40 participantes", "https://form.google.com/reforestacion", 
+        "Plantar un árbol es plantar vida para el futuro."},
+    
+        {"Proyecto-Movilidad Sostenible", "Lima", "Pueblo Libre", "2024-05-01", "Progreso", 
+        "Fomentar el uso de medios de transporte sostenibles como bicicletas y transporte público eficiente.", 
+        "Implementaremos talleres de sensibilización y promoveremos el uso de ciclovías en Pueblo Libre.", 
+        "Líder - Luis Vega", "25 participantes", "https://form.google.com/movilidad", 
+        "Moverse de manera sostenible es avanzar hacia un mundo mejor."}};
+
+//Inicia bucle do - while
+    do {
+	    //Menú busqueda general
+        cout << "Seleccione tipo de búsqueda: "<<endl;
+	    cout << "(1) Por palabra clave" <<endl;
+	    cout << "(2) Por filtros: "<<endl;
+        
+        cin >> opcionMenu;
+	
+	    // Limpiar buffer de entrada
+    	cin.ignore();
+        
+
+        if (opcionMenu == 1) {
+            cout << "Ingrese palabra clave: ";
+
+        } else if (opcionMenu == 2) {
+            
+            do{
+                //Menu filtros
+    	        cout << "Seleccione el tipo de filtro: "<<endl;
+              cout << "(3) Por departamento "<<endl;
+    	        cout << "(4) Por distrito "<<endl;
+    	        
+              cin >> filtro;
+    	    
+    
+                if (filtro == 3) {
+            	
+                    do {
+                        cout << "Ingrese departamento: " << endl;
+                        cout << "(1) Lima " << endl;
+                        cout << "(2) Regresar " << endl;
+                
+                        cin >> departamentoOpcion;
+                
+                            // Condicional opción Departamento
+                            if (departamentoOpcion == 1) {
+                                buscarPorDepartamento(campañas, "Lima");
+                                break; // Salir del bucle al seleccionar un departamento válido
+                            } else if (departamentoOpcion == 2) {
+                                cout << "Regresando al menú de filtros..." << endl;
+                                break; // Salir del bucle y regresar al menú de filtros
+                            } else {
+                                cout << "Opción de departamento no válida." << endl;
+                            }
+                    } while (departamentoOpcion != 2); // bucle que permite regresar en opcion 2
+        
+        
+                } else if (filtro == 4) {
+                    
+                    do{
+            		    cout << "Seleccione distrito: " << endl;
+                        cout << "(1) La Molina" << endl;
+                        cout << "(2) Lince" << endl;
+                        cout << "(3) Miraflores" << endl;
+                        cout << "(4) San Miguel" << endl;
+                        cout << "(5) Pueblo Libre" << endl;
+                        cout << "(6) Regresar" << endl;
+            
+                        cin >> distritoOpcion;
+                                
+                        //Condicional para distrito con switch
+                        switch (distritoOpcion) {
+                            case 1:
+                                buscarPorDistrito(campañas, "La Molina");
+                                break;
+                            case 2:
+                                buscarPorDistrito(campañas, "Lince");
+                                break;
+                            case 3:
+                                buscarPorDistrito(campañas, "Miraflores");
+                                break;
+                            case 4:
+                                buscarPorDistrito(campañas, "San Miguel");
+                                break;
+                            case 5:
+                                buscarPorDistrito(campañas, "Pueblo Libre");
+                                break;
+                            case 6:
+                                cout << "Regresando al menú de filtros..." << endl;
+                                break;
+                            default:
+                                cout << "Opción de distrito no válida." << endl;
+                        }
+                    }while(distritoOpcion != 6);   // bucle que permite regresar en case 6 
+                     
+                }else{
+                cout << "Opción de filtro no válida." << endl; //Si en filtro ponen alguna opcion no valida
+                }
+            
+            } while (filtro == 3 || filtro == 4); //fin de do-while para regresar a menu filtros.
+        }
+        
+        cout << "¿Desea realizar otra búsqueda? (si/no): " << endl;
+        cin >> opcionBusqueda;
+    } while (opcionBusqueda == "si" || opcionBusqueda == "SI");
+
+        cout << "Gracias por usar el sistema de búsqueda de campañas." << endl;
+        
+return 0;
+
+}
