@@ -145,19 +145,14 @@ int main(){
         
         cin >> opcionMenu;
 	
-	    // Limpiar buffer de entrada - sacado de Stackoverflow
+	    // Limpiar buffer de entrada 
     	cin.ignore();
         
 
         if (opcionMenu == 1) {
             cout << "Ingrese palabra clave: ";
             
-            /* Borrar luego eesto: La función getline en C++ se utiliza para leer una línea completa de texto desde un
-            flujo de entrada, como std::cin. A diferencia de cin, que solo lee hasta el primer espacio,
-            getline captura toda la línea, incluidos los espacios, hasta que encuentra un carácter de
-            nueva línea (\n).*/
-            
-            getline(cin, palabraClave); // Captura todo el texto de entrada - sacado de Stackoverflow
+            getline(cin, palabraClave); // Captura todo el texto de entrada 
 	        buscarPorPalabraClave(campañas, palabraClave);
 
         } else if (opcionMenu == 2) {
