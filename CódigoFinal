@@ -155,8 +155,8 @@ int main(){
     do {
 	    //Menú busqueda general
         cout << "Seleccione tipo de búsqueda: "<<endl;
-	    cout << "(1) Por palabra clave" <<endl;
-	    cout << "(2) Por filtros: "<<endl;
+	cout << "(1) Por palabra clave" <<endl;
+	cout << "(2) Por filtros: "<<endl;
         
         cin >> opcionMenu;
 	
@@ -208,7 +208,7 @@ int main(){
                 } else if (filtro == 4) {
                     
                     do{
-            		    cout << "Seleccione distrito: " << endl;
+            		cout << "Seleccione distrito: " << endl;
                         cout << "(1) La Molina" << endl;
                         cout << "(2) Lince" << endl;
                         cout << "(3) Miraflores" << endl;
