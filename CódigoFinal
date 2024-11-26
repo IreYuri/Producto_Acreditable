@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 //Declarar voids
@@ -155,8 +156,8 @@ int main(){
     do {
 	    //Menú busqueda general
         cout << "Seleccione tipo de búsqueda: "<<endl;
-	cout << "(1) Por palabra clave" <<endl;
-	cout << "(2) Por filtros: "<<endl;
+	    cout << "(1) Por palabra clave" <<endl;
+	    cout << "(2) Por filtros: "<<endl;
         
         cin >> opcionMenu;
 	
@@ -199,8 +200,6 @@ int main(){
                                 break; // Salir del bucle y regresar al menú de filtros
                             } else {
                                 cout << "\nOpción de departamento no válida." << endl;
-                                cout << "\n¿Desea realizar otra búsqueda? (si/no): " << endl;
-                                cin >> opcionBusqueda;
                             }
                     } while (departamentoOpcion != 2); // bucle que permite regresar en opcion 2
         
@@ -208,7 +207,7 @@ int main(){
                 } else if (filtro == 4) {
                     
                     do{
-            		cout << "Seleccione distrito: " << endl;
+            		    cout << "Seleccione distrito: " << endl;
                         cout << "(1) La Molina" << endl;
                         cout << "(2) Lince" << endl;
                         cout << "(3) Miraflores" << endl;
@@ -240,9 +239,6 @@ int main(){
                                 break;
                             default:
                                 cout << "\nOpción de distrito no válida." << endl;
-                                cout << "\n¿Desea realizar otra búsqueda? (si/no): " << endl;
-                                cin >> opcionBusqueda;
-                                
                         }
                     }while(distritoOpcion != 6);   // bucle que permite regresar en case 6 
                      
