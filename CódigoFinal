@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
 //Declarar voids
@@ -156,20 +155,20 @@ int main(){
     do {
 	    //Menú busqueda general
         cout << "Seleccione tipo de búsqueda: "<<endl;
-	    cout << "(1) Por palabra clave" <<endl;
-	    cout << "(2) Por filtros: "<<endl;
+	cout << "(1) Por palabra clave" <<endl;
+	cout << "(2) Por filtros: "<<endl;
         
         cin >> opcionMenu;
 	
-	    // Limpiar buffer de entrada 
+	// Limpiar buffer de entrada 
     	cin.ignore();
         
 
         if (opcionMenu == 1) {
             cout << "Ingrese palabra clave: ";
             
-            getline(cin, palabraClave); // Captura todo el texto de entrada 
-	        buscarPorPalabraClave(campañas, palabraClave);
+        getline(cin, palabraClave); // Captura todo el texto de entrada
+	buscarPorPalabraClave(campañas, palabraClave);
 
         } else if (opcionMenu == 2) {
             
@@ -207,7 +206,7 @@ int main(){
                 } else if (filtro == 4) {
                     
                     do{
-            		    cout << "Seleccione distrito: " << endl;
+            		cout << "Seleccione distrito: " << endl;
                         cout << "(1) La Molina" << endl;
                         cout << "(2) Lince" << endl;
                         cout << "(3) Miraflores" << endl;
