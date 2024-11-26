@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -200,6 +199,8 @@ int main(){
                                 break; // Salir del bucle y regresar al menú de filtros
                             } else {
                                 cout << "\nOpción de departamento no válida." << endl;
+                                cout << "\n¿Desea realizar otra búsqueda? (si/no): " << endl;
+                                cin >> opcionBusqueda;
                             }
                     } while (departamentoOpcion != 2); // bucle que permite regresar en opcion 2
         
@@ -239,6 +240,9 @@ int main(){
                                 break;
                             default:
                                 cout << "\nOpción de distrito no válida." << endl;
+                                cout << "\n¿Desea realizar otra búsqueda? (si/no): " << endl;
+                                cin >> opcionBusqueda;
+                                
                         }
                     }while(distritoOpcion != 6);   // bucle que permite regresar en case 6 
                      
