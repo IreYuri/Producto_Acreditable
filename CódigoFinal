@@ -139,7 +139,7 @@ int main(){
 //Bienvenida!   
     cout << "                G  R  E  E  N  P  E  A  C  E                 " << endl;
     
-    cout << "¡Bienvenido al Sistema de Búsqueda de Campañas de Greenpeace!" << endl;
+    cout << "\n¡Bienvenido al Sistema de Búsqueda de Campañas de Greenpeace!" << endl;
     cout << "------------------------------------------------------------" << endl;
 
     string nombreUsuario;
