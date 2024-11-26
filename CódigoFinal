@@ -135,7 +135,23 @@ int main(){
         "Implementaremos talleres de sensibilización y promoveremos el uso de ciclovías en Pueblo Libre.", 
         "Líder - Luis Vega", "25 participantes", "https://form.google.com/movilidad", 
         "Moverse de manera sostenible es avanzar hacia un mundo mejor."}};
+    
+//Bienvenida!   
+    cout << "                G  R  E  E  N  P  E  A  C  E                 " << endl;
+    
+    cout << "¡Bienvenido al Sistema de Búsqueda de Campañas de Greenpeace!" << endl;
+    cout << "------------------------------------------------------------" << endl;
 
+    string nombreUsuario;
+    
+    cout << "Por favor, ingresa tu nombre para personalizar la experiencia: ";
+    getline(cin, nombreUsuario);
+    cout << "\nHola " << nombreUsuario << ", nos alegra tenerte aquí." << endl;
+    cout << "Explora las campañas y encuentra oportunidades para participar." << endl;
+    cout << "-------------------------------------------------------------" << endl;
+
+
+    
 //Inicia bucle do - while
     do {
 	    //Menú busqueda general
