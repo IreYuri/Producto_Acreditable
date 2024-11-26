@@ -196,10 +196,10 @@ int main(){
                                 buscarPorDepartamento(campañas, "Lima");
                                 break; // Salir del bucle al seleccionar un departamento válido
                             } else if (departamentoOpcion == 2) {
-                                cout << "Regresando al menú de filtros..." << endl;
+                                cout << "\nRegresando al menú de filtros..." << endl;
                                 break; // Salir del bucle y regresar al menú de filtros
                             } else {
-                                cout << "Opción de departamento no válida." << endl;
+                                cout << "\nOpción de departamento no válida." << endl;
                             }
                     } while (departamentoOpcion != 2); // bucle que permite regresar en opcion 2
         
@@ -235,25 +235,25 @@ int main(){
                                 buscarPorDistrito(campañas, "Pueblo Libre");
                                 break;
                             case 6:
-                                cout << "Regresando al menú de filtros..." << endl;
+                                cout << "\nRegresando al menú de filtros..." << endl;
                                 break;
                             default:
-                                cout << "Opción de distrito no válida." << endl;
+                                cout << "\nOpción de distrito no válida." << endl;
                         }
                     }while(distritoOpcion != 6);   // bucle que permite regresar en case 6 
                      
                 }else{
-                cout << "Opción de filtro no válida." << endl; //Si en filtro ponen alguna opcion no valida
+                cout << "\nOpción de filtro no válida." << endl; //Si en filtro ponen alguna opcion no valida
                 }
             
             } while (filtro == 3 || filtro == 4); //fin de do-while para regresar a menu filtros.
         }
         
-        cout << "¿Desea realizar otra búsqueda? (si/no): " << endl;
+        cout << "\n¿Desea realizar otra búsqueda? (si/no): " << endl;
         cin >> opcionBusqueda;
     } while (opcionBusqueda == "si" || opcionBusqueda == "SI");
 
-        cout << "Gracias por usar el sistema de búsqueda de campañas." << endl;
+        cout << "\nGracias por usar el sistema de búsqueda de campañas." << endl;
         
 return 0;
 
